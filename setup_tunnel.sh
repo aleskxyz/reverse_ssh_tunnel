@@ -229,7 +229,7 @@ fi
 # Restart SSH service only if needed
 if [ "\$NEEDS_RESTART" = true ]; then
     print_status "info" "Restarting SSH service due to configuration changes"
-    sudo systemctl restart sshd
+    sudo systemctl restart ssh
 else
     print_status "info" "No configuration changes needed, skipping SSH service restart"
 fi
