@@ -1,3 +1,17 @@
+## Deprecated
+
+This project is archived in favor of [ssh_tunnel](https://github.com/aleskxyz/ssh_tunnel).
+
+To remove your current installation, run the following commands:
+
+```bash
+for i in $(systemctl list-units --no-legend --no-pager 'reverse-ssh-*' | awk '{print $1}'); do
+  systemctl disable --now "$i"
+done
+sudo systemctl reset-failed
+rm -f /etc/systemd/system/reverse-ssh-* /etc/ssh/reverse_ssh_tunnel*
+```
+
 # Reverse SSH Tunnel Setup
 
 A robust script for setting up and maintaining reverse SSH tunnels with automatic health checking.
